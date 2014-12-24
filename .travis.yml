@@ -11,7 +11,7 @@ env:
 install:
     - pip install flake8 --use-mirrors
     - pip install -e .
-    - pip uninstall django
+    - pip uninstall --yes django
     - pip install -q Django==$DJANGO_VERSION
     - pip install coveralls
 before_script:
