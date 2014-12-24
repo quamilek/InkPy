@@ -4,9 +4,15 @@ python:
   - "3.3"
   - "2.7"
   - "pypy"
+env:
+  - DJANGO_VERSION=1.4.16
+  - DJANGO_VERSION=1.6.8
+  - DJANGO_VERSION=1.7.1
 install:
     - pip install flake8 --use-mirrors
     - pip install -e .
+    - pip uninstall django
+    - pip install -q Django==$DJANGO_VERSION
     - pip install coveralls
 before_script:
     flake8 --statistics src/inkpy
